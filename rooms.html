@@ -49,9 +49,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li class="active"><a href="rooms.html">Rooms</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="events.html">Events</a></li>
+                        <li><a href="events.html">Activities</a></li>
                         <li><a href="contact.html">Contact</a></li>
-                        <li><a href="reservation.html">Reservation</a></li>
                       </ul>
                     </div>
                   </div>
@@ -86,7 +85,7 @@
     </section>
     <!-- END section -->
 
-    <section class="section pb-4">
+    <section class="section bg-light pb-0"  >
       <div class="container">
        
         <div class="row check-availabilty" id="next">
@@ -95,49 +94,39 @@
             <form action="#">
               <div class="row">
                 <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                  <label for="checkin_date" class="font-weight-bold text-black">Check In</label>
+                  <label for="name" class="font-weight-bold text-black">Name</label>
                   <div class="field-icon-wrap">
                     <div class="icon"><span class="icon-calendar"></span></div>
-                    <input type="text" id="checkin_date" class="form-control">
+                    <input type="text" name="name" id="name" placeholder="Enter name" class="form-control">
                   </div>
-                </div>
+                </div>  
                 <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
-                  <label for="checkout_date" class="font-weight-bold text-black">Check Out</label>
+                  <label for="phoneNumber" class="font-weight-bold text-black">Phone Number</label>
                   <div class="field-icon-wrap">
                     <div class="icon"><span class="icon-calendar"></span></div>
-                    <input type="text" id="checkout_date" class="form-control">
+                    <input type="tel" name="phoneNumber" id="phoneNumber" class="form-control" minlength="10" maxlength="10" pattern="\d{10}" placeholder="Enter phone number" required>
                   </div>
                 </div>
-                <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
+                <div class="col-md-6 mb-3 mb-md-0 col-lg-4">
                   <div class="row">
                     <div class="col-md-6 mb-3 mb-md-0">
-                      <label for="adults" class="font-weight-bold text-black">Adults</label>
+                      <label for="checkin_date" class="font-weight-bold text-black">Check In</label>
                       <div class="field-icon-wrap">
-                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="" id="adults" class="form-control">
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4+</option>
-                        </select>
+                        <div class="icon"><span class="icon-calendar"></span></div>
+                        <input name="checkIn" placeholder="Date" type="text" id="checkin_date" class="form-control">
                       </div>
                     </div>
                     <div class="col-md-6 mb-3 mb-md-0">
-                      <label for="children" class="font-weight-bold text-black">Children</label>
+                      <label for="checkout_date" class="font-weight-bold text-black">Check Out</label>
                       <div class="field-icon-wrap">
-                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                        <select name="" id="children" class="form-control">
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4+</option>
-                        </select>
+                        <div class="icon"><span class="icon-calendar"></span></div>
+                        <input name="checkOut"  placeholder="Date" type="text" id="checkout_date" class="form-control">
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6 col-lg-3 align-self-end">
-                  <button class="btn btn-primary btn-block text-white">Check Availabilty</button>
+                <div class="col-md-6 col-lg-2 align-self-end">
+                  <button class="btn btn-primary btn-block text-white align-items-center">Enquery</button>
                 </div>
               </div>
             </form>
@@ -151,43 +140,67 @@
     
     <section class="section">
       <div class="container">
+      
+        <div class="row justify-content-center " style="gap: 40px;">
+          <div class="col-md-4 col-lg-3 room-card pt-3 " data-aos="fade-up">
+            <a href="rooms.html" class="room">
+                <figure class="img-wrap">
+                    <img src="images/Home/bed4.jpg" alt="Mountain View Combo" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-start ">
+                  <div class="text-center">
+
+                    <h4>Standard Room</h4>
+                  </div>
+                    <ul class="room-details">
+                      <li>₹2,000 per night</li>
+                      <li>Spacious, modern rooms</li>
+                      <li>Stunning mountain views</li>
+                      <li>Ideal for couples or solo travelers</li>
+                  </ul>
+                    
+                </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-lg-3 room-card pt-3 " data-aos="fade-up">
+            <a href="rooms.html" class="room">
+                <figure class="img-wrap">
+                    <img src="images/Home/bed5.jpg" alt="Mountain View Combo" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-start">
+                  <div class="text-center"> 
+                    <h4>Mountain View Combo</h4>
+                  </div>
+                    <ul class="room-details">
+                      <li>₹8,000 per day</li>
+                      <li>4 Rooms + Hall</li>
+                      <li>Mountain View Balcony</li>
+                      <li>Ideal for Families & Groups</li>
+                  </ul>
+                </div>
+            </a>
+          </div>
+            <div class="col-md-4 col-lg-3 room-card pt-3 " data-aos="fade-up">
+            <a href="rooms.html" class="room">
+                <figure class="img-wrap">
+                    <img src="images/Home/bed5.jpg" alt="Mountain View Combo" class="img-fluid mb-3">
+                </figure>
+                <div class="p-3 text-start">
+                  <div class="text-center"> 
+                    <h4>Cozy Retreat</h4>
+                  </div>
+                    <ul class="room-details">
+                      <li>₹2,000 per day</li>
+                      <li>Spacious, Modern rooms</li>
+                      <li>Mountain View Balcony</li>
+                      <li>Ideal for Couples & Groups</li>
+                  </ul>
+                </div>
+            </a>
+          </div>
         
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
-            <a href="#" class="room">
-              <figure class="img-wrap">
-                <img src="images/Home/bed4.jpg" alt="Free website template" class="img-fluid mb-3">
-              </figure>
-              <div class="p-3 text-center room-info">
-                <h2>standard Room</h2>
-                <span class="text-uppercase letter-spacing-1">2000 per night</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
-            <a href="#" class="room">
-              <figure class="img-wrap">
-                <img src="images/Home/bed3.jpg" alt="Free website template" class="img-fluid mb-3">
-              </figure>
-              <div class="p-3 text-center room-info">
-                <h2>Mountain View Combo</h2>
-                <span class="text-uppercase letter-spacing-1">8,000 per night</span>
-              </div>
-            </a>
-          </div>
 
-          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
-            <a href="#" class="room">
-              <figure class="img-wrap">
-                <img src="images/Home/bedroom.png" alt="Free website template" class="img-fluid mb-3">
-              </figure>
-              <div class="p-3 text-center room-info">
-                <h2>Cozy Retreat</h2>
-                <span class="text-uppercase letter-spacing-1">2000 per night</span>
-              </div>
-            </a>
-          </div>
         </div>
       </div>
     </section>
@@ -228,10 +241,10 @@
       <div class="container" >
         <div class="row align-items-center">
           <div class="col-12 col-md-6 text-center mb-4 mb-md-0 text-md-left" data-aos="fade-up">
-            <h2 class="text-white font-weight-bold">A Best Place To Stay. Reserve Now!</h2>
+            <h2 class="text-white font-weight-bold">A Best Place To Stay. Contact Now!</h2>
           </div>
           <div class="col-12 col-md-6 text-center text-md-right" data-aos="fade-up" data-aos-delay="200">
-            <a href="reservation.html" class="btn btn-outline-white-primary py-3 text-white px-5">Reserve Now</a>
+            <a href="contact.html" class="btn btn-outline-white-primary py-3 text-white px-5">Contact Now</a>
           </div>
         </div>
       </div>
