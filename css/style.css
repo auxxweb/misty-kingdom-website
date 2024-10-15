@@ -18,7 +18,7 @@
 }
 
 .room-card:hover {
-  box-shadow: 0px 10px 20px rgb(171, 212, 184); /* Stronger shadow on hover */
+  box-shadow: 0px 2px 4px#2c8769; /* Stronger shadow on hover */
   transform: translateY(-5px);  /* Slight lift effect on hover */
 }
 
@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5 {
   height: 50px;
   border-width: 2px; }
   .form-control:active, .form-control:focus {
-    border-color: #ffba5a; }
+    border-color: #2c8769; }
 
 textarea.form-control {
   height: inherit; }
@@ -190,7 +190,9 @@ textarea.form-control {
         .site-navbar nav .menu li a:hover:before {
           width: 100%; }
       .site-navbar nav .menu li.active a {
-        color: #ffba5a; }
+        color: #00cc99
+
+        ; }
         .site-navbar nav .menu li.active a:before {
           width: 100%; }
   .site-navbar .extra-info a {
@@ -1238,16 +1240,19 @@ textarea.form-control {
   margin: 0; }
   .custom-breadcrumbs li {
     display: inline-block;
-    color: #fff;
+    color: #00cc99;
     margin: 0 4px;
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: .1em;
     font-weight: bold; }
     .custom-breadcrumbs li a {
-      font-weight: normal; }
+      font-weight: normal;
+    color: #fff; }
       .custom-breadcrumbs li a:hover {
-        color: #fff; }
+        color:#2c8769
+
+        ; }
 
 .timeline-item {
   padding: 3em 2em 2em;
