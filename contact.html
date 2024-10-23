@@ -300,11 +300,27 @@
         </div>
         <div class="col-md-3 mb-5">
           <p>Sign up for our newsletter</p>
-          <form action="#" class="footer-newsletter">
+          <div
+          id="successMessage1"
+          style="display: none;"
+          class="alert alert-success text-center"
+          >
+          Thank you! for Subscribe
+          </div>
+          <form method="post" id="contactform1" class="footer-newsletter">
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email..." />
-              <button type="submit" class="btn">
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Email..."
+                required
+              />
+              <button type="submit" class="btn" id="s-btn1">
                 <span class="fa fa-paper-plane"></span>
+              </button>
+              <button type="submit" class="btn" style="display: none;" id="loading1">
+                <span class="fa fa-circle-o-notch"></span>
               </button>
             </div>
           </form>
@@ -324,11 +340,11 @@
         </p>
 
         <p class="col-md-6 text-right social">
-          <a href="#"><span class="fa fa-tripadvisor"></span></a>
-          <a href="#"><span class="fa fa-facebook"></span></a>
+          <!-- <a href="#"><span class="fa fa-tripadvisor"></span></a> -->
+          <a href="www.facebook.com"><span class="fa fa-facebook"></span></a>
+          <a href="www.instagram.com"><span class="fa fa-instagram"></span></a>
           <a href="#"><span class="fa fa-twitter"></span></a>
-          <a href="#"><span class="fa fa-linkedin"></span></a>
-          <a href="#"><span class="fa fa-vimeo"></span></a>
+          <!-- <a href="#"><span class="fa fa-vimeo"></span></a> -->
         </p>
       </div>
     </div>
@@ -350,27 +366,14 @@
   <script src="js/jquery.timepicker.min.js"></script>
 
   <script src="js/main.js"></script>
-
   <script>
     $(document).ready(function () {
-      $('#contactform').submit((e) => {
+      $('#contactform1').submit((e) => {
         e.preventDefault()
-        // Validation
-        const name = $('#name').val().trim();
-        const email = $('#email').val().trim();
-        const phoneNumber = $('#phoneNumber').val().trim();
-        const message = $('#message').val().trim();
 
-        // Check if all fields have values
-        if (!name || !email || !phoneNumber || !message) {
-          alert('Please fill in all fields.');
-          return;
-        }
-
-
-        const loading = document.getElementById('loading')
-        const btn = document.getElementById('s-btn')
-        const successMessage = document.getElementById('successMessage') // Updated ID
+        const loading = document.getElementById('loading1')
+        const btn = document.getElementById('s-btn1')
+        const successMessage = document.getElementById('successMessage1') // Updated ID
 
         loading.style.display = 'block'
         btn.style.display = 'none'
@@ -378,14 +381,14 @@
         $.ajax({
           url:
             'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
-          data: $('#contactform').serialize(),
+          data: $('#contactform1').serialize(),
           method: 'post',
           success: function (response) {
             if (successMessage) {
               successMessage.style.display = 'block' // Show success message
             }
             // Clear form fields
-            $('#contactform')[0].reset()
+            $('#contactform1')[0].reset()
 
             btn.style.display = 'block'
             loading.style.display = 'none'
