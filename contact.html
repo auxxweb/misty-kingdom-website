@@ -5,6 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Misty Kingdom</title>
+  <link rel="shortcut icon" href="images/Logos/logo-head.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
@@ -104,7 +105,7 @@
         </div>
         <div class="row">
           <div class="col-md-7 col-sm-12" data-aos="fade-up" data-aos-delay="100">
-            <form method="post" id="contactform" novalidate="novalidate" class="bg-white p-md-5 p-4 mb-5 border">
+            <form method="post" id="contactform"  class="bg-white p-md-5 p-4 mb-5 border">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <label for="name">Name</label>
@@ -128,12 +129,12 @@
                   <textarea name="message" id="message" class="form-control" cols="30" rows="8"></textarea>
                 </div>
               </div>
-              <div class="row">
+              <div class="row" style="justify-content: center;">
                 <div id="s-btn" class="col-md-16 form-group ml-2">
                   <h4 id="successMessage" style="color: green; display: none;" class="contact-title">form submitted
                     successfully!!</h4>
 
-                  <input type="submit" value="Send Message" class="btn btn-primary text-white font-weight-bold" />
+                  <input id="s-btn" type="submit" value="Send Message" class="btn btn-primary text-white font-weight-bold" />
                 </div>
                 <div id="loading" style="display: none;" class="col-md-6 form-group">
                   <input value="submitting.." class="btn btn-primary text-white font-weight-bold" disabled />
@@ -401,6 +402,43 @@
         })
       })
     })
+  </script>
+     <script>
+      $(document).ready(function () {
+          $('#contactform').submit((e) => {
+              e.preventDefault()
+
+              const loading = document.getElementById('loading');
+              const btn = document.getElementById('s-btn');
+              const successMessage = document.getElementById('successMessage');
+
+              loading.style.display = 'block';
+              btn.style.display = 'none';
+
+              $.ajax({
+                  url:
+                      'https://script.google.com/macros/s/AKfycbyH6foigFQ6qbqTUmIFdKD7UqxGi5pgH8EmNKP2-ZwYHhmf_Qq9hfnJ1JyEBcUvRuzl/exec',
+                  data: $('#contactform').serialize(),
+                  method: 'post',
+                  success: function (response) {
+                      if (successMessage) {
+                          successMessage.style.display = 'block';
+                      }
+
+                      // Clear form fields
+                      $('#contactform')[0].reset();
+
+                      btn.style.display = 'block';
+                      loading.style.display = 'none';
+                  },
+                  error: function (err) {
+                      loading.style.display = 'none';
+                      btn.style.display = 'block';
+                      alert('Something went wrong. Please try again.');
+                  },
+              });
+          });
+      });
   </script>
 </body>
 
